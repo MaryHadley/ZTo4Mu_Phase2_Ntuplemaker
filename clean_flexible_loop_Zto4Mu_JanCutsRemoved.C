@@ -37,7 +37,8 @@ int myAdd(int a, int b){
 void clean_flexible_loop_Zto4Mu_JanCutsRemoved (string file){
 
   // l o a d   t h e   t r e e s 
-  root_file = new TFile(file.c_str(),"READ");
+//  root_file = new TFile(file.c_str(),"READ");
+  root_file = TFile::Open(file.c_str(),"READ");
   TREE   = new tree((TTree*)root_file->Get("tree"));
   TREEMC = new treeMC((TTree*)root_file->Get("treemc"));
   
